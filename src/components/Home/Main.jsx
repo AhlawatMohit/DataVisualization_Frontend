@@ -42,10 +42,10 @@ const Main = () => {
   const [likelihood, setLikelihood] = useState({});
   const [filteredData, setFilteredData] = useState(jsonData);
   const [filters, setFilters] = useState({ sector: '', topic: '', insight: '', region: '', country: '' });
-  const [isHighlighted, setHighlighted] = useState(false);
+  const [isHighlighted, setHighlighted] = useState(true);
 
   const options = {
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     responsive: true,
     plugins: {
       legend: {
@@ -58,7 +58,7 @@ const Main = () => {
     },
   };
   const options2 = {
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     responsive: true,
     plugins: {
       legend: {
@@ -71,7 +71,7 @@ const Main = () => {
     },
   };
   const options3 = {
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     responsive: true,
     plugins: {
       legend: {
@@ -230,23 +230,23 @@ const Main = () => {
           <div className='text-2xl text-[#59D5E0] my-5'>All Data <span className='text-[#387ADF]'>/</span> Filtered Data</div>
           <div className='flex justify-center items-center'>
             <div className='m-2'>
-              <label className='text-sm mr-2'>Topic</label>
+              <label className='text-sm text-white mr-2'>Topic</label>
               <input className='w-48 h-6 rounded ml-1' type="text" name="topic" value={filters.topic} onChange={handleFilterChange} />
             </div>
             <div className='m-2'>
-              <label className='text-sm mr-2'>Sector</label>
+              <label className='text-sm text-white mr-2'>Sector</label>
               <input className='w-48 h-6 rounded ml-1' type="text" name="sector" value={filters.sector} onChange={handleFilterChange} />
             </div>
             <div className='m-2'>
-              <label className='text-sm mr-2'>Region</label>
+              <label className='text-sm text-white mr-2'>Region</label>
               <input className='w-48 h-6 rounded ml-1' type="text" name="region" value={filters.region} onChange={handleFilterChange} />
             </div>
             <div className='m-2'>
-              <label className='text-sm mr-2'>Insight</label>
+              <label className='text-sm text-white mr-2'>Insight</label>
               <input className='w-48 h-6 rounded ml-1' type="text" name="pestle" value={filters.insight} onChange={handleFilterChange} />
             </div>
             <div className='m-2'>
-              <label className='text-sm mr-2'>Country</label>
+              <label className='text-sm text-white mr-2'>Country</label>
               <input className='w-48 h-6 rounded ml-1' type="text" name="country" value={filters.country} onChange={handleFilterChange} />
             </div>
           </div>
@@ -256,9 +256,9 @@ const Main = () => {
         <div>
           <button onClick={handleChange} className='border-2 rounded-lg border-solid hover:border-[#50C4ED] py-2 px-4 m-5 bg-[#416D19] hover:bg-[#9BCF53] text-white hover:text-[#000]'>Show All Data</button>
         </div>
-        <div className={`flex flex-col justify-center items-center ${isHighlighted ? 'hidden' : 'block'}`}>
+        <div className={`grid md:grid-cols-3 m-5 justify-center items-center ${isHighlighted ? 'hidden' : 'block'}`}>
           {filteredData.map((item, index) => (
-            <div key={index} className='border-2 rounded-lg text-white mx-auto w-fit h-fit p-10 m-4'>
+            <div key={index} className='border-2 rounded-lg text-white w-fit h-fit p-5 m-4'>
               <p className="">Topic : {item.topic}</p>
               <p className="">Sector : {item.sector}</p>
               <p className="">Region : {item.region}</p>

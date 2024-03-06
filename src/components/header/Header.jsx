@@ -31,11 +31,8 @@ export default function Header() {
 
 
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900 hover:text-white">
-            Graph
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900 hover:text-white">
-            All Data
+          <a href="#" className="text-base font-semibold leading-6 text-white hover:text-white">
+          Data Visualization
           </a>
         </Popover.Group>
 
@@ -75,14 +72,9 @@ export default function Header() {
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-200 hover:text-gray-500"
                 >
-                  Graph
+                 Data Visualization
                 </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-200 hover:text-gray-500"
-                >
-                  All Data
-                </a>
+              
               </div>
               <div className="py-6">
                 <a
